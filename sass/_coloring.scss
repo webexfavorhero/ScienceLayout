@@ -1,0 +1,96 @@
+@mixin bgcolor( $namebgcolor, $colorbg ){
+	.bg-#{$namebgcolor}{
+		background-color: $colorbg;
+	}
+}
+
+@include bgcolor( blue, $blue );
+@include bgcolor( bluelight, $bluelight );
+@include bgcolor( bluelight-2, $blue-real );
+@include bgcolor( bluedark, $bluedarksuper );
+@include bgcolor( gray, $gray );
+@include bgcolor( yellow, $yellow );
+@include bgcolor( green, $green );
+@include bgcolor( white, white);
+@include bgcolor( purple, $bluedark );
+@include bgcolor( green-light, $green-light );
+
+.bg-gradient-green{
+	background-image: linear-gradient( to right, $green, $green-light );
+}
+.bg-gradient-green-light{
+	background-image: linear-gradient( to right, $green-dark, $green-light )
+}
+.bg-gradient-purple{
+	background-image: linear-gradient( to right, $pink, $bluedark );
+}
+.bg-gradient-pink{
+	background-image: linear-gradient( to right, $pink, $bluedark );
+}
+.bg-gradient-bluepurple{
+	background-image: linear-gradient( to right, $blue, $bluedark );
+}
+.bg-gradient-purpleblue{
+	background-image: linear-gradient( to right, $bluedark, $bluelight );
+}
+.bg-gradient-bluewhite{
+	background-image: linear-gradient( to right, #094671, $blue );
+}
+.bg-gradient-orange{
+	background-image: linear-gradient( to right, $orange, $orange-light );
+}
+
+.bg-gradient-orangewhite{}
+
+
+.bg-gradient-purple,
+.bg-gradient-purpleblue,
+.bg-gradient-bluepurple,
+.bg-bluelight,
+.bg-bluedark,
+.bg-bluelight-2,
+.bg-green,
+.bg-purple,
+.bg-gradient-pink,
+.bg-gradient-green,
+.bg-gradient-orange,
+.bg-gradient-green-light,
+.content-section-bg,
+.content-homeservices{
+	.title-content,
+	.subtitle-content{
+		color: white !important;
+	}
+	.text-content-section{
+		color: rgba( white, .7 );
+	}
+}
+
+.bg-gradient-green{
+	.text-content-section{
+		color: white;
+	}
+}
+
+@mixin textcolor( $nametextcolor, $colortextone, $colortexttwo){
+	.text-#{$nametextcolor}{
+		color: $colortextone !important;
+	}
+	a{
+		&.#{$nametextcolor}{
+			color: $colortextone;
+			&:hover,
+			&:focus{
+				color: $colortexttwo;
+			}
+		}
+	}
+}
+
+@include textcolor( bluelight, $bluelight, darken( $bluelight, 5% ) );
+@include textcolor( blue, $blue, darken( $blue, 5% ) );
+@include textcolor( pink, $pink, darken( $pink, 5% ) );
+@include textcolor( yellow, $yellow, darken( $yellow, 5% ) );
+@include textcolor( green, $green, darken( $green, 5% ) );
+@include textcolor( green-light, $green-light, darken( $green-light, 5% ) );
+@include textcolor( purple, $bluedark, darken( $bluedark, 5% ) );

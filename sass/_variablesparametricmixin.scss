@@ -1,0 +1,87 @@
+// VARIABLES
+$pink: #c91179;
+$bluedarksuper: #30343e;
+$bluedark: #7b30c0;
+$gray: #f0f0f0;
+$blue: #5ba4d4;
+$blue-real: #46acc9;
+$bluelight: #86a4c9;
+$green: #43c39a;
+$green-light: #9edf8d;
+$yellow: #f3c904;
+$orange: #cd5134;
+$orange-light: #e8803f;
+$heading-content: #424242;
+$text-content: #7b7b7b;
+$footer: #424755;
+
+$green-dark: #89c024;
+$green-light: #abd243;
+
+
+$mask-bg: #2e3342;
+$mask-article: #353637;
+$line: #b6b6b6;
+
+$title-widget: #d1d1d1;
+$link-footer: rgba( #d1d1d1, .3 );
+
+
+// INITIAL TYPOGRAPHY
+@mixin brandon-bold{
+	font-family: "BrandonGrotesque-Bold", sans-serif;
+	font-weight: 800;
+	font-style: normal;
+}
+@mixin brandon-medium{
+	font-family: "BrandonGrotesque-Medium", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+}
+@mixin brandon-regular{
+	font-family: "BrandonGrotesque-Regular", 'sans-serif';
+	font-weight: 400;
+	font-style: normal;
+}
+@mixin brandon-thin{
+	font-family: "BrandonGrotesque-Thin", sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+$georgia: "Georgia", Times, 'Times New Roman', serif;
+
+$trans: all 250ms ease;
+
+@mixin resetlist{
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+}
+
+@mixin placeholder(){
+	::-webkit-input-placeholder {
+		color: rgba( white, .2 );
+		font-size: 14px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	:-moz-placeholder { /* Firefox 18- */
+		color: rgba( white, .2 );
+		font-size: 14px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	::-moz-placeholder {  /* Firefox 19+ */
+		color: rgba( white, .2 );
+		font-size: 14px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	:-ms-input-placeholder {  
+		color: rgba( white, .2 );
+		font-size: 14px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}

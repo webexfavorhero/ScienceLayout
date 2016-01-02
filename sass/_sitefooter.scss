@@ -1,0 +1,19 @@
+.site-footer{
+	background-color: $footer;
+	padding: 60px 0 35px;
+}
+.footer-container{}
+.copyright{
+	font-weight: bold;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: rgba( $title-widget, .6 );
+	a{
+		color: rgba( $title-widget, .6 );
+		&:hover,
+		&:focus{
+			color: $title-widget;
+		}
+	}
+
+}

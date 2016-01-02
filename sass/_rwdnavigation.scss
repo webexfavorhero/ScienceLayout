@@ -1,0 +1,175 @@
+.rwd-navigation{
+	float: right;
+	position: relative;
+	display: none;
+}
+
+.btn-rwd{
+	color: white;
+	cursor: pointer;
+	margin-top: 15px;
+	&:hover,
+	&:focus{
+		color: rgba( white, .6 );
+	}
+}
+.nav-collapse{
+	position: absolute;
+	top: 175%;
+	right: -25px;
+	background-color: white;
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+	min-width: 180px;
+	max-height: 400px;
+	overflow-y: scroll;
+	border: 1px solid #E4E4E4;
+	li{
+		display: block;
+		padding-left: 10px;
+		padding-right: 10px;
+		&:last-child{
+			a{
+				border-bottom: none;
+			}
+		}
+		a{
+			color: $heading-content;
+			text-transform: uppercase;
+			font-size: 13px;
+			padding: 10px;
+			padding-left: 0 !important;
+			display: block;
+			border-bottom: 1px solid #E4E4E4;
+			&:hover,
+			&:focus{
+				color: $text-content;
+			}
+			.icon{
+				display: none;
+			}
+			.text{
+				margin-left: 0;
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+// RWD INTERNAL HEADER
+.rwd-internal-header{
+	float: left;
+	display: none;
+}
+.rwd-orange{
+	.btn-showing-internal{
+		color: $orange;
+		&:hover,
+		&:focus{
+			color: darken( $orange, 5% );
+		}
+	}
+	.rwd-internal-navigation{
+		li{
+			a{
+				color: $orange;
+				&:hover,
+				&:focus{
+					color: darken( $orange, 5% );
+				}
+			}
+		}
+	}
+}
+.rwd-blue{
+	.btn-showing-internal{
+		color: $blue;
+		&:hover,
+		&:focus{
+			color: darken( $blue, 5% );
+		}
+	}
+	.rwd-internal-navigation{
+		li{
+			a{
+				color: $blue;
+				&:hover,
+				&:focus{
+					color: darken( $blue, 5% );
+				}
+			}
+		}
+	}
+}
+.rwd-green-light{
+	.btn-showing-internal{
+		color: $green-light;
+		&:hover,
+		&:focus{
+			color: darken( $green-light, 5% );
+		}
+	}
+	.rwd-internal-navigation{
+		li{
+			a{
+				color: $green-light;
+				&:hover,
+				&:focus{
+					color: darken( $green-light, 5% );
+				}
+			}
+		}
+	}
+}
+.btn-showing-internal{
+	display: block;
+	float: left;
+	color: white;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 20px 0;
+	cursor: pointer;
+	i{
+		margin-right: 10px;
+	}
+	&:hover,
+	&:focus{
+		color: darken( white, 5% );
+	}
+}
+.rwd-internal-navigation{
+	display: none;
+	@include resetlist;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 100%;
+	background-color: $mask-bg;
+	li{ 
+		display: block;
+		&:first-child{
+			a{
+				margin-top: 25px;
+			}
+		}
+		&:last-child{
+			a{
+				margin-bottom: 25px;
+			}
+		}
+		a{
+			display: block;
+			padding: 10px 10px;
+			color: white;
+			text-transform: uppercase;
+			font-size: 12px;
+			font-weight: bold;
+			&:hover,
+			&:focus{
+				color: rgba( white, .7 );
+			}
+		}
+	}
+}

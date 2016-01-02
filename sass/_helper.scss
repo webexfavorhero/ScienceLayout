@@ -1,0 +1,20 @@
+$spacing:
+	( space30, 30px ),
+	( space45, 45px ),
+	( space75, 75px ),
+	( space100, 100px );
+
+@each $class-space, $prop-space in $spacing{
+	.#{$class-space}{
+		width: 100%;
+		height: $prop-space;
+	}
+}
+
+.nopaddbottom{
+	padding-bottom: 0 !important;	
+}
+
+.nopaddtop{
+	padding-top: 0 !important;
+}

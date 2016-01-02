@@ -1,0 +1,463 @@
+.site-header{
+	z-index: 888;
+	width: 100%;
+	.sticky-header{
+		width: 100%;
+	}
+	.container{
+		padding: 30px 25px;
+		border-bottom: 1px solid rgba( white, .2 );
+		transition: all 250ms ease;
+	}
+}
+.site-header.headroom {
+	position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     transition: all .2s ease-in-out;
+ }
+.site-header.headroom--unpinned {
+	transform: translateY(-52%);
+}
+.site-header.exclude-internal.headroom--unpinned{
+	transform: translateY(-100%);
+}
+.site-header.headroom--pinned {
+	transform: translateY(0%);
+}
+
+ .site-header{
+ 	&.headroom--top{
+		-webkit-animation-name: fadeIn;
+		animation-name: fadeIn;
+		transition: all 1s ease;
+ 		.copy-internal-header{
+ 			display: none;
+ 		}
+ 	}
+ 	&.headroom--not-top{
+		-webkit-animation-name: fadeIn;
+		animation-name: fadeIn;
+ 		// WHEN STICKY
+ 		.copy-internal-header{
+ 			display: block;
+ 		}
+		.sticky-header{
+			background-color: white;
+			border-bottom: 1px solid lighten($line, 20% );
+			z-index: 9999;
+			position: relative;
+			backface-visibility: hidden;
+			.container{
+				padding: 25px !important;
+			}
+		}
+		.logo-sticky{
+			display: none !important;
+		}
+		.logo-unsticky{
+			display: block !important;
+		}
+		.main-navigation{
+			ul{
+				li{
+					a{
+						color: $heading-content;
+					}
+				}
+			}
+		}
+		.btn-rwd{
+			color: $heading-content;
+			&:hover,
+			&:focus{
+				color: $text-content;
+			}
+		}
+ 	}
+ }
+
+.copy-internal-header{
+	
+	transition: all 500ms ease-in-out;
+	transform: translateY(-250%);
+	&.onscroll{
+		transform: translateY(0);
+	}
+	.site-subheader{
+
+	}
+	.container{
+		border-bottom: none !important;
+		padding: 0 15px !important;
+	}
+}
+
+
+.on-sticky{
+	.sticky-header{
+		background-color: white;
+		border-bottom: 1px solid lighten($line, 20% );
+	}
+	.container{
+		padding: 25px !important;
+	}
+	.logo-sticky{
+		display: none !important;
+	}
+	.logo-unsticky{
+		display: block !important;
+	}
+	.main-navigation{
+		ul{
+			li{
+				a{
+					color: $heading-content;
+				}
+			}
+		}
+	}
+	.btn-rwd{
+		color: $heading-content;
+		&:hover,
+		&:focus{
+			color: $text-content;
+		}
+	}
+}
+.logo{
+	float: left;
+	.logo-sticky{
+		cursor: pointer;
+		display: block;
+	}
+	.logo-unsticky{
+		cursor: pointer;
+		display: none;
+	}
+}
+
+.main-navigation{
+	float: right;
+	text-transform: uppercase;
+	font-size: 14px;
+	z-index: 999;
+	ul{
+		@include resetlist;
+		>li{
+			float: left;
+			display: block;
+			position: relative;
+			&:last-child{
+				>a{
+					padding-right: 0;
+				}
+			}
+			>a{
+				padding: 10px;
+				display: block;
+				color: white;
+			}
+			>ul{
+				z-index: 999;
+				display: block;
+				position: absolute;
+				top: 230%;
+				min-width: 270px;
+				background-color: white;
+				li{
+					float: none;
+					display: block;
+					padding-left: 15px;
+					padding-right: 15px;
+					&:first-child{
+						>a{
+							&:before{
+								position: absolute;
+								content: "";
+								display: block;
+								left: 20px;
+								top: -10px;
+								width: 0;
+								height: 0;
+								border-left: 26px solid transparent;
+								border-right: 26px solid transparent;
+								border-bottom: 23px solid white;
+							}
+						}
+					}
+					&:hover,
+					&:focus,
+					&.active{
+						>a{
+							color: $heading-content !important;
+						}
+					}
+
+					>a{
+						position: relative;
+						color: $line;
+						display: block;
+						padding: 13px 5px;
+						border-bottom: 1px solid #E4E4E4;
+						font-size: 13px;
+					}
+				}
+			}
+
+		}
+	}
+}
+/*  THIS STYLING FOR NAVIGATION WITH ICON 
+ *  ONLY, YOU CAN MAKE IT DYNAMIC WITH 
+ *  EMBEDD IT
+/* ----------------------------------------- */
+.with-icon{
+	&:hover,
+	&:focus,
+	&.active{
+		>a{
+			.icon-1{
+				background-image: url("../images/navicon/1-hover.png") !important;
+			}
+			.icon-2{
+				background-image: url("../images/navicon/2-hover.png") !important;
+			}
+			.icon-3{
+				background-image: url("../images/navicon/3-hover.png") !important;
+			}
+			.icon-4{
+				background-image: url("../images/navicon/4-hover.png") !important;
+			}
+		}
+	}
+	> a{
+		padding: 5px !important;
+		.icon{
+			transition: all 250ms ease;
+			background-position: center center;
+			background-repeat: no-repeat;
+			width: 47px;
+			height: 47px;
+			margin-right: 5px;
+			display: block;
+			float: left;
+			&.icon-1{
+				background-image: url("../images/navicon/1.png");
+			}
+			&.icon-2{
+				background-image: url("../images/navicon/3.png");
+				
+			}
+			&.icon-3{
+				background-image: url("../images/navicon/4.png");
+			}
+			&.icon-4{
+				background-image: url("../images/navicon/2.png");
+			}
+		}
+	}
+	.text{
+		display: block;
+		margin-left: 55px;
+		margin-top: 15px;
+	}
+}
+
+.navigation-pink{
+	ul{
+		li{
+			&:hover,
+			&:focus,
+			&.active{
+				>a{
+					color: $pink;
+				}
+			}
+			a{
+				color: white;
+			}
+		}
+	}
+}
+.navigation-bluelight{
+	ul{
+		li{
+			&:hover,
+			&:focus,
+			&.active{
+				>a{
+					color: $bluelight;
+				}
+			}
+			a{
+				color: white;
+			}
+		}
+	}
+}
+.navigation-blue{
+	ul{
+		li{
+			&:hover,
+			&:focus,
+			&.active{
+				>a{
+					color: $blue;
+				}
+			}
+			a{
+				color: white;
+			}
+		}
+	}
+}
+.navigation-yellow{
+	ul{
+		li{
+			&:hover,
+			&:focus,
+			&.active{
+				>a{
+					color: $yellow;
+				}
+			}
+			a{
+				color: white;
+			}
+		}
+	}
+}
+.navigation-green{
+	ul{
+		li{
+			&:hover,
+			&:focus,
+			&.active{
+				>a{
+					color: $green;
+				}
+			}
+			a{
+				color: white;
+			}
+		}
+	}
+}
+.navigation-green-light{
+	ul{
+		li{
+			&:hover,
+			&:focus,
+			&.active{
+				>a{
+					color: $green-light;
+				}
+			}
+			a{
+				color: white;
+			}
+		}
+	}
+}
+.navigation-orange{
+	ul{
+		li{
+			&:hover,
+			&:focus,
+			&.active{
+				>a{
+					color: $orange;
+				}
+			}
+			a{
+				color: white;
+			}
+		}
+	}
+}
+
+/*  SITE-SUBHEADER
+/* ----------------------------------------- */
+.site-subheader{
+	position: relative;
+	padding: 15px 0;
+	transition: all .2s ease-in-out;
+	z-index: 88;
+	&.bg-white{
+		.subheader-navigation{
+			ul{
+				li{
+					&:hover,
+					&:focus{
+						>a{
+							color: $text-content;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.subheader-navigation{
+	float: left;
+	ul{
+		@include resetlist;
+		li{
+			float: left;
+			&:first-child{
+				a{
+					margin-left: 0;
+				}
+			}
+			&:hover,
+			&:focus{
+				>a{
+					color: rgba( white, .7 );
+				}
+			}
+			>a{
+				text-transform: uppercase;
+				font-size: 14px;
+				color: white;
+				display: block;
+				margin: 15px;
+			}
+		}
+	}
+}
+.subheader-orange{
+	ul{
+		li{
+			&:focus{
+				>a{
+				}
+			}
+			>a{
+				color: $orange;
+				text-transform: uppercase;
+				font-size: 14px;
+				display: block;
+				margin: 15px;
+			}
+		}
+	}
+}
+.subheader-blue{
+	ul{
+		li{
+			&:focus{
+				>a{
+				}
+			}
+			>a{
+				color: $blue;
+				text-transform: uppercase;
+				font-size: 14px;
+				display: block;
+				margin: 15px;
+			}
+		}
+	}
+}

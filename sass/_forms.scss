@@ -1,0 +1,43 @@
+form{
+	.field-box{
+		margin-bottom: 45px;
+	}
+}
+.form-contact{
+	@include placeholder();
+	input,
+	textarea{
+		border: 2px solid rgba( white, .2 );
+		background-color: transparent;
+		padding-left: 40px;
+		padding-right: 40px;
+		transition: all 250ms ease;
+		color: rgba( white, .8 );
+		&:active{
+			outline: none !important;
+		}
+		&:hover,
+		&:focus{
+			border-color: rgba( white, .8 );	
+		}
+	}
+	input{
+		height: 55px;
+		line-height: 55px;
+		padding-top: 0;
+		padding-bottom: 0;
+		border-radius: 33px;
+	}
+	textarea{
+		padding-top: 40px;
+		padding-bottom: 40px;
+		border-radius: 9px;
+	}
+	input[type="submit"]{
+		background-color: white;
+		&:hover,
+		&:focus{
+			background-color: darken( white, 5% );
+		}
+	}
+}

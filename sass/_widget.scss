@@ -1,0 +1,17 @@
+.widget{
+	margin-bottom: 30px;
+	.title-widget{
+		@include brandon-bold;
+		font-size: 14px;
+		color: rgba( $title-widget, .6 );
+		text-transform: uppercase;
+		margin-top: 0;
+		margin-bottom: 25px;
+	}
+}
+.widget-mark{}
+.widget-socmed{}
+.widget-text{
+	font-size: 14px;
+	p{}
+}

@@ -1,0 +1,22 @@
+/*  TYPOGRAPHY's
+/* ------------------------------------ */
+
+/* Fool-proof @font-face */
+/* Based on http://coding.smashingmagazine.com/2013/02/14/setting-weights-and-styles-at-font-face-declaration/ */
+@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+	@font-face {
+		font-family: $font-family;
+			src: url('#{$file-path}.eot');
+			src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),url('#{$file-path}.woff') format('woff'),
+				url('#{$file-path}.ttf') format('truetype');
+		font-weight: $font-weight;
+		font-style: $font-style;
+	}
+
+}
+
+// INSTALLING FONTS
+@include font-face( BrandonGrotesque-Bold, '../fonts/BrandonGrotesque-Bold', 800, normal );
+@include font-face( BrandonGrotesque-Medium, '../fonts/BrandonGrotesque-Medium', 600, normal );
+@include font-face( BrandonGrotesque-Regular, '../fonts/BrandonGrotesque-Regular', 400, normal );
+@include font-face( BrandonGrotesque-Thin, '../fonts/BrandonGrotesque-Thin', 300, normal );

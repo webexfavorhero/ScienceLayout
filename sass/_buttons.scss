@@ -1,0 +1,49 @@
+@mixin btncolor( $namecolor, $colorbtnone, $colorbtntwo ){
+	.btn-#{$namecolor}{
+		background-color: $colorbtnone;
+		color: white;
+		&:hover,
+		&:focus{
+			color: white;
+			background-color: $colorbtntwo;
+		}
+	}
+}
+@mixin btnlinecolor( $namecolor, $colorbtnone, $colorbtntwo){
+	.btn-line-#{$namecolor}{
+		border: 2px solid $colorbtnone;
+		color: $colorbtnone;
+		background-color: transparent;
+		&:hover,
+		&:focus{
+			border: 2px solid $colorbtntwo;
+			color: $colorbtntwo;
+		}
+	}
+}
+.btn{
+	transition: $trans;
+	@include brandon-bold;
+	text-transform: uppercase;
+	line-height: 1;
+	font-size: 16px;
+	border-radius: 33px;
+	padding: 20px 42px;
+}
+
+.btn-m{
+	padding: 12px 32px;
+}
+
+@include btncolor( orange, $orange, darken( $orange, 5% ) );
+@include btncolor( white, white, darken(white, 5%) );
+@include btncolor( pink, $pink, darken($pink,5%) );
+@include btncolor( bluelight, $bluelight, darken( $bluelight, 5%) );
+@include btncolor( green, $green, darken( $green, 5%) );
+@include btncolor( green-light, $green-light, darken( $green-light, 5%) );
+@include btncolor( yellow, $yellow, darken( $yellow, 5%) );
+@include btncolor( purple, $bluedark, darken( $bluedark, 5%) );
+@include btncolor( blue, $blue, darken( $blue, 5% ) );
+@include btnlinecolor( pink, $pink, darken($pink, 5% ) );
+@include btnlinecolor( gray, $line, $heading-content );
+@include btnlinecolor( white, white, darken( white, 5% ) );
